@@ -56,7 +56,7 @@ module StatesHelper
         ['Wyoming', 'WY']
     ]
   end
-  def category
+  def categories
     [
         ["none"],
         ['grocery'],
