@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   end
   get '/locations', to:'locations#locations'
   get '/locations/new', to:'locations#new'
+  post '/locations/new', to:'locations#create'
+  post '/locations', to:'locations#create'
+
   # get '/coord', to: 'locations#convert'
 
 
