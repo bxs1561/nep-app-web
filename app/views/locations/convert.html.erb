@@ -1,1 +1,4 @@
-<p><%=@coords.lat %><p/>
+<%@coords.each do |co| %>
+  <p><%=co.first.coordinates %><p/>
+
+<% end %>

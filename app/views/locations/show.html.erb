@@ -1,0 +1,42 @@
+<div class="ui grid">
+  <%#= render 'users/right_menu' %>
+  <div class="fourteen wide column">
+    <h1>Dashboard</h1>
+    <div>
+      <div class="ui stackable four cards">
+        <% @location.each do |loc| %>
+          <div class="ui card">
+            <div class="content">
+              <div class="header">
+                <%= loc[:name] %>
+              </div>
+              <div class="ui vertical segments">
+                <div class="ui segment">
+                  <div class="ui small images">
+                  </div>
+                  <img src="<%= loc[:url] %>" width="175" height="130">
+
+                </div>
+              </div>
+            </div>
+            <!--            <div class="extra content">-->
+            <div class="content">
+              <p>Address:   <%= loc[:street] %> <%= loc[:city] %>, <%= loc[:state] %> <%= loc[:zip_code] %></p>
+              <p>Phone Number: <%= loc[:phone_number] %></p>
+              <h5>Type: <%= loc[:category] %></h5>
+
+            </div>
+            <div>
+              <td><%= link_to 'Edit', edit_location_path(loc), class: 'ui primary button' %></td>
+              <td><%= link_to 'delete', locations_path(loc), class: 'ui primary button' %></td>
+            </div>
+
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+    <br/>
+    <%= link_to 'Add new address', new_location_path, class: 'ui inverted violet button' %>
+  </div>
+</div>

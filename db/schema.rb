@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2020_05_25_214927) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "url"
-    t.string "type"
+    t.string "category"
     t.string "street"
     t.string "city"
     t.string "state"
     t.string "zip_code"
     t.string "phone_number"
-    t.integer "lat"
-    t.integer "long"
+    t.float "lat"
+    t.float "long"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

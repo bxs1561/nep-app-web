@@ -7,6 +7,10 @@ class LocationsController < ApplicationController
     @locations = Location.new
   end
 
+  def show
+    @location = Location.all
+  end
+
   def create
     @locations = Location.new(location_store_params)
     if @locations.save
@@ -30,14 +34,15 @@ class LocationsController < ApplicationController
       render 'edit_location'
     end
   end
+
   def locations
 
   end
 
   def convert
-    @coords = Geokit::Geocoders::GoogleGeocoder.geocode '140 Market St, San Francisco, CA'
+    @coords = Geocoder.search('Paris')
+    # @coords = coord.first
   end
-
 
 
   def destroy_location
@@ -50,8 +55,9 @@ class LocationsController < ApplicationController
 
 
   private
+
     def location_store_params
-      params.require(:location).permit(:street, :city,:state, :zip_code, :phone_number, :lat, :long, :name, :url, :type)
+      params.require(:location).permit(:street, :city, :state, :zip_code, :phone_number, :lat, :long, :name, :url, :category)
     end
 
 end

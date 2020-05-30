@@ -3,3 +3,7 @@
     font-weight: bold;
     font-size: 20px;
 }
+.top_left{
+    position: fixed;
+    left: 110px;
+}

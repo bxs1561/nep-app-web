@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   get '/locations/new', to:'locations#new'
   post '/locations/new', to:'locations#create'
   post '/locations', to:'locations#create'
+  get '/locations/show', to:'locations#show'
+  get '/locations/:id/edit', to:'locations#edit_location'
+  patch '/locations/:id', to:'locations#update', as: 'location'
+
+
+
 
   # get '/coord', to: 'locations#convert'
 

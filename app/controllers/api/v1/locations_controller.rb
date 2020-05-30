@@ -5,7 +5,6 @@ class Api::V1::LocationsController < ApplicationController
 
   def index
     render json: Location.all
-
   end
   def new
     @location= Location.new
@@ -49,11 +48,15 @@ class Api::V1::LocationsController < ApplicationController
     head :no_content
   end
 
+  def edit_location
+    @locations = Location.find(params[:id])
+  end
+
 
 
   private
     def location_store_params
-      params.require(:location).permit(:street, :city,:state, :zip_code, :phone_number, :lat, :long, :name, :url, :type)
+      params.require(:location).permit(:street, :city,:state, :zip_code, :phone_number, :lat, :long, :name, :url, :category)
     end
 
 end
