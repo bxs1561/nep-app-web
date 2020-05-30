@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       get '/location/:id', to: 'locations#index'
 
 
-      # post 'image-stores', to: 'images#create'
     end
 
   end
