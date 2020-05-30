@@ -30,7 +30,6 @@ Rails.application.routes.draw do
 
 
   # post '/locations/new', to:'images#create'
-  # post '/images', to:'images#create'
   #
      root 'homes#home'
   resources :locations
